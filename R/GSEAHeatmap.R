@@ -29,9 +29,9 @@ GSEAHeatmap <- function(object, reduction = "nmf", max.terms.per.factor = 3, dro
     terms_j <- df2[idx, i]
     v <- sort(terms_j, decreasing = TRUE)
     if (length(v) > max.terms.per.factor) {
-      terms <- c(terms, names(v)[1:max.terms.per.factor])
+      terms <- c(terms_i, names(v)[1:max.terms.per.factor])
     } else {
-      terms <- c(terms, names(v))
+      terms <- c(terms_j, names(v))
     }
   }
   terms <- unique(terms)
